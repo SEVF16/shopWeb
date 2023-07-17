@@ -1,0 +1,171 @@
+
+header {
+  background-color: #333;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+}
+
+.logo img {
+  width: 70px; /* Ajusta el ancho de la imagen según tus necesidades */
+  height: auto; /* Esto mantendrá la proporción de aspecto original */
+}
+.menu-container {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  transition: left 0.3s ease;
+}
+
+.menu-icon {
+  display: block;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-icon span {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon span:nth-child(1) {
+  top: 0;
+}
+
+.menu-icon span:nth-child(2) {
+  top: 8px;
+}
+
+.menu-icon span:nth-child(3) {
+  top: 16px;
+}
+
+.menu-toggle:checked + .menu-icon span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle:checked + .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked + .menu-icon span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.sidebar-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu ul li {
+  position: relative;
+  z-index: 4;
+}
+
+.sidebar-menu ul li a {
+  display: block;
+  padding: 10px 20px;
+  margin-top: 25px ;
+  color: #fff;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.sidebar-menu ul li:hover > .submenu {
+  display: block;
+}
+
+.has-submenu { /* Ajusta el z-index para .has-submenu */
+  position: relative;
+  z-index: 5;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 300px;
+  background-color: #444;
+  z-index: 6; /* Aumenta el valor de z-index */
+}
+
+.submenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  position: relative;
+  z-index: 7; /* Aumenta el valor de z-index */
+}
+
+.submenu a {
+  padding: 10px 40px;
+}
+
+.submenu .submenu {
+  top: 0;
+  left: 100%;
+  width: 250px;
+  background-color: #555;
+  z-index: 8; /* Aumenta el valor de z-index */
+}
+
+.menu-toggle:checked ~ .sidebar {
+  left: 0;
+}
+
+.search-box {
+  position: relative;
+  display: inline-block;
+}
+
+.search-input {
+  width: 600px;
+  padding-right: 25px; /* Espacio para el ancho del ícono */
+}
+.search-input {
+  width: 400px; /* Ajusta el ancho del campo de entrada según tus necesidades */
+}
+.fa-magnifying-glass {
+  position: absolute;
+  top: 50%;
+  right: 5px; /* Ajusta la posición del ícono según tus necesidades */
+  transform: translateY(-50%);
+}
+
+
+.search-box input[type="text"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}

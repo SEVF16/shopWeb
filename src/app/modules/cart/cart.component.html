@@ -1,0 +1,41 @@
+<app-nav></app-nav>
+<div class="carrito-container">
+  <h2>Carrito de Compras</h2>
+
+  <!-- Mostrar mensaje si el carrito está vacío -->
+  <div *ngIf="carrito.length === 0; else productosEnCarrito">
+    <p>El carrito está vacío.</p>
+  </div>
+
+  <ng-template #productosEnCarrito>
+    <!-- Mostrar productos en el carrito -->
+    <div class="grid-container">
+      <div class="producto-card" *ngFor="let producto of carrito">
+        <div class="img-container">
+          <img [src]="producto.imagen" alt="Imagen del producto">
+        </div>
+        <div class="info-container">
+          <h3>{{ producto.nombre }}</h3>
+          <p>Precio: ${{ producto.precio.toFixed(2) }}</p>
+        </div>
+        <div class="cantidad-container">
+          <button (click)="disminuirCantidad(producto)">-</button>
+          <input type="number" [(ngModel)]="producto.cantidad" min="1" class="cantidad-input">
+          <button (click)="aumentarCantidad(producto)">+</button>
+        </div>
+      </div>
+
+      <div class="total-card">
+        <div class="total-container">
+          <p>Total: ${{ calcularTotal().toFixed(2) }}</p>
+        </div>
+        <button class="limpiar-button" (click)="limpiarCarrito()">Limpiar Carrito</button>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+<app-footer></app-footer>

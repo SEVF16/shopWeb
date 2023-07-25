@@ -26,28 +26,33 @@
   margin-bottom: 10px;
 }
 
-.quantity-control {
+.cantidad-container {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
-.quantity-control input {
-  width: 50px;
-}
-
-.quantity-button {
-  background-color: #f2f2f2;
-  color: #333;
+.cantidad-input {
+  width: 60px; /* Cambia el valor según el ancho deseado */
+  font-size: 16px; /* Cambia el tamaño de fuente si es necesario */
+  padding: 4px 8px; /* Ajusta el relleno interno del input */
   border: 1px solid #ccc;
-  padding: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s; /* Transición para el efecto hover */
+  border-radius: 4px;
 }
+
+.cantidad-container button {
+  font-size: 16px;
+  padding: 4px 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
 
 /* Estilo de hover para el botón de cantidad */
-.quantity-button:hover {
+.cantidad-container button:hover {
   background-color: #ddd;
   border-color: #ddd; /* Cambio de color del borde en el hover */
 }
@@ -113,6 +118,11 @@ table {
   padding: 20px;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* Estilos responsive para dispositivos móviles */
 @media screen and (max-width: 768px) {

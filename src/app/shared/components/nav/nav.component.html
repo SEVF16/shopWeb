@@ -4,13 +4,13 @@
   </div>
 
   <div class="menu-container">
-    <input type="checkbox" id="menu-toggle" class="menu-toggle"  (click)="toggleMenu()" [checked]="isMenuOpen" >
+    <input type="checkbox" id="menu-toggle" class="menu-toggle"  (click)="toggleMenu()" >
     <label for="menu-toggle" class="menu-icon">
       <i class="fa-solid fa-bars fa-xl" style="color: #1b1c1d;"></i>
       Menú
     </label>
 
-    <div class="sidebar"  #sidebarElement [ngClass]="{ 'open': isMenuOpen }">
+    <div class="sidebar" [class.menu-open]="isMenuOpen" >
       <div class="sidebar-menu">
         <ul>
           <li><a href="#">Inicio</a></li>
@@ -50,8 +50,8 @@
     Login o Register
     <i class="fa-solid fa-chevron-down" style="color: #19191a;"></i>
   </div>
-  <div class="cart">
+  <div  routerLink="/cart" class="cart">
     <i class="fa-solid fa-cart-shopping fa-xl" style="color: #111212;"></i>
   </div>
-  <div class="login"></div>
+  <div></div>
 </header>

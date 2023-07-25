@@ -1,0 +1,101 @@
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr auto; /* La segunda columna se ajustará automáticamente al contenido */
+  gap: 20px; /* Espacio entre las columnas */
+  justify-content: center; /* Centrar horizontalmente los elementos */
+}
+
+.producto-card {
+  display: flex;
+  align-items: center;
+  width: 700px;
+  margin-left: 50px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  grid-column: 1;
+}
+
+.img-container {
+  flex: 0 0 100px; /* Ancho fijo de la imagen */
+  margin-right: 10px;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-container {
+  flex: 1; /* Ocupa el espacio restante */
+}
+
+.info-container h3 {
+  margin: 0;
+}
+
+.cantidad-container {
+  display: flex;
+  align-items: center;
+}
+
+.cantidad-input {
+  width: 60px; /* Cambia el valor según el ancho deseado */
+  font-size: 16px; /* Cambia el tamaño de fuente si es necesario */
+  padding: 4px 8px; /* Ajusta el relleno interno del input */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cantidad-container button {
+  font-size: 16px;
+  padding: 4px 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.total-card {
+  /* Estilos para la tarjeta del total y el botón */
+  width: 250px; /* Ajusta el ancho de la tarjeta según tus necesidades */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  grid-column: 2;
+  grid-row: 1; /* Asegura que total-card esté en la fila 1 */
+}
+
+
+.total-card p {
+  /* Estilos para el texto del total */
+  font-weight: bold;
+}
+
+.limpiar-button {
+  /* Estilos para el botón de limpiar */
+  width: 100%;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+
+/* Para los navegadores modernos (Chrome, Firefox, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+

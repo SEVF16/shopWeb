@@ -10,9 +10,11 @@ import { DetailproductComponent } from './products/detailproduct/detailproduct.c
 import { ModulesComponent } from './modules.component';
 import { NavComponent } from '../shared/components/nav/nav.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
+import { CartComponent } from './cart/cart.component';
+import { ListproductsComponent } from './products/listproducts/listproducts.component';
 register();
 @NgModule({
-  declarations: [HomeComponent, DetailproductComponent, ModulesComponent, NavComponent, FooterComponent],
+  declarations: [HomeComponent, DetailproductComponent, ModulesComponent, NavComponent, FooterComponent, CartComponent, ListproductsComponent],
   imports: [
     CommonModule,
     ModulesRoutingModule,

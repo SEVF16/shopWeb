@@ -29,4 +29,10 @@ export class ProductService {
         map((data: any[]) => data.slice(0, 8))
       );
   }
+
+  getDetailProduct(id: number): Observable<Product>{
+
+    return this.http.get<Product>(`${this.apiUrlProduct}/${id}`)
+  }
+
 }

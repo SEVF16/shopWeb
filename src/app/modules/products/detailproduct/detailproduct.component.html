@@ -1,24 +1,24 @@
 <app-nav></app-nav>
-<div class="flex">
-  <swiper-container class="swiper-container" slides-per-view="1" speed="300" loop="true" autoplay="true" navigation="true" >
-    <swiper-slide  *ngFor="let item of slideimg">
-       <img class="slideImg" [src]="item" alt="">
-    </swiper-slide>
-  </swiper-container>
+<div class="flex" *ngFor="let item of detailProduct">
   <div class="product-container">
+    <swiper-container class="swiper-container" slides-per-view="1" speed="300" loop="true" autoplay="true" navigation="true" >
+      <swiper-slide  *ngFor="let img of item.images">
+         <img class="slideImg" [src]="img" alt="">
+      </swiper-slide>
+    </swiper-container>
     <div class="product-details">
       <div class="detail">
-        <h1></h1>
+        <h1>Producto</h1>
         <h2>Descripción</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>{{item.description}}</p>
       </div>
       <div class="detail">
         <h2>Precio</h2>
-        <p>$99.99</p>
+        <p>${{item.price}}</p>
       </div>
       <div class="detail">
         <h2>Nombre</h2>
-        <p>Producto ABC</p>
+        <p>{{item.title}}</p>
       </div>
       <div class="cantidad-container">
         <button >-</button>

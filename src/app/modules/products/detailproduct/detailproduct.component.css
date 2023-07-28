@@ -8,12 +8,11 @@
 
 .swiper-container{
   width: 800px;
-  height: 1000px;
 }
 
 .slideImg{
-  width: 1500px;
-  height: 500px;
+  width: 100vh;
+  height: 100vh;
   display: block;
   margin: 20px auto;
 }

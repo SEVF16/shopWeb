@@ -10,7 +10,7 @@
             <p>Descripción breve del producto</p>
             <p class="price">${{item.price}}</p>
             <div class="buttons">
-              <button class="btn btn-view"  routerLink="/detalle">Ver más</button>
+              <button class="btn btn-view"  (click)="seeDetail(item.id)">Ver más</button>
               <button class="btn btn-add"  (click)="agregarAlCarrito(item)">Agregar al carrito</button>
             </div>
           </div>

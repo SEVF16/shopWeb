@@ -4,6 +4,7 @@ import { Product } from 'src/app/core/interfaces/product.interfaces';
 import { Observable, forkJoin, take } from 'rxjs';
 import { Category } from 'src/app/core/interfaces/category.ionterfaces';
 import { CartService } from 'src/app/core/services/cart.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listproducts',
   templateUrl: './listproducts.component.html',
@@ -12,7 +13,7 @@ import { CartService } from 'src/app/core/services/cart.service';
 export class ListproductsComponent implements OnInit {
   categories: Category[] = [];
   products: { [key: number]: Product[] } = {};
-  constructor(private productService: ProductService, private carritoService: CartService) { }
+  constructor(private productService: ProductService, private carritoService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     this.getCategoriesAndProducts();
@@ -30,7 +31,6 @@ export class ListproductsComponent implements OnInit {
       forkJoin(productObservables).subscribe((results) => {
         results.forEach((products, index) => {
           this.products[categories[index].id] = products;
-          console.log(products);
         });
       });
     });
@@ -38,5 +38,9 @@ export class ListproductsComponent implements OnInit {
 
   agregarAlCarrito(item: any) {
     this.carritoService.agregarAlCarrito(item);
+  }
+
+  seeDetail(id: number){
+    this.router.navigate([`detail/${id}`])
   }
 }

@@ -3,20 +3,20 @@
   <h2>Carrito de Compras</h2>
 
   <!-- Mostrar mensaje si el carrito está vacío -->
-  <div *ngIf="carrito.length === 0; else productosEnCarrito">
+  <div *ngIf="carritoSer.length === 0; else productosEnCarrito">
     <p>El carrito está vacío.</p>
   </div>
 
   <ng-template #productosEnCarrito>
     <!-- Mostrar productos en el carrito -->
     <div class="grid-container">
-      <div class="producto-card" *ngFor="let producto of carrito">
+      <div class="producto-card" *ngFor="let producto of carritoSer">
         <div class="img-container">
-          <img [src]="producto.imagen" alt="Imagen del producto">
+          <img [src]="producto.images" alt="Imagen del producto">
         </div>
         <div class="info-container">
-          <h3>{{ producto.nombre }}</h3>
-          <p>Precio: ${{ producto.precio.toFixed(2) }}</p>
+          <h3>{{ producto.title }}</h3>
+          <p>Precio: ${{ producto.price }}</p>
         </div>
         <div class="cantidad-container">
           <button (click)="disminuirCantidad(producto)">-</button>

@@ -1,20 +1,22 @@
-
 <div *ngFor="let category of categories">
   <h1 class="titulo">{{category.name}}</h1>
   <hr>
-  <div class="containerHijo">
-    <div class="card" *ngFor="let item of products[category.id]">
-      <img [src]="item.images" alt="Imagen del producto">
-      <div class="card-info">
-        <h2>{{item.title}}</h2>
-        <p>Descripción breve del producto</p>
-        <p class="price">${{item.price}}</p>
-        <div class="buttons">
-          <button class="btn btn-view"  routerLink="/detalle">Ver más</button>
-          <button class="btn btn-add">Agregar al carrito</button>
+    <swiper-container class="swiper-container" slides-per-view="3" speed="600" loop="true" autoplay="true" navigation="true" >
+      <swiper-slide class="containerHijo" *ngFor="let item of products[category.id]">
+        <div class="card" >
+          <img [src]="item.images" alt="Imagen del producto">
+          <div class="card-info">
+            <h2>{{item.title}}</h2>
+            <p>Descripción breve del producto</p>
+            <p class="price">${{item.price}}</p>
+            <div class="buttons">
+              <button class="btn btn-view"  routerLink="/detalle">Ver más</button>
+              <button class="btn btn-add"  (click)="agregarAlCarrito(item)">Agregar al carrito</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </swiper-slide>
+    </swiper-container>
 </div>
+
 

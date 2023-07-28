@@ -1,28 +1,30 @@
 <app-nav></app-nav>
-<div class="product-container">
-  <div class="image-carousel">
-    <img src="imagen1.jpg" alt="Imagen 1">
-    <img src="imagen2.jpg" alt="Imagen 2">
-    <img src="imagen3.jpg" alt="Imagen 3">
-  </div>
-  <div class="product-details">
-    <div class="detail">
-      <h1></h1>
-      <h2>Descripción</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="detail">
-      <h2>Precio</h2>
-      <p>$99.99</p>
-    </div>
-    <div class="detail">
-      <h2>Nombre</h2>
-      <p>Producto ABC</p>
-    </div>
-    <div class="cantidad-container">
-      <button >-</button>
-      <input type="number"  min="1" class="cantidad-input">
-      <button >+</button>
+<div class="flex">
+  <swiper-container class="swiper-container" slides-per-view="1" speed="300" loop="true" autoplay="true" navigation="true" >
+    <swiper-slide  *ngFor="let item of slideimg">
+       <img class="slideImg" [src]="item" alt="">
+    </swiper-slide>
+  </swiper-container>
+  <div class="product-container">
+    <div class="product-details">
+      <div class="detail">
+        <h1></h1>
+        <h2>Descripción</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="detail">
+        <h2>Precio</h2>
+        <p>$99.99</p>
+      </div>
+      <div class="detail">
+        <h2>Nombre</h2>
+        <p>Producto ABC</p>
+      </div>
+      <div class="cantidad-container">
+        <button >-</button>
+        <input type="number"  min="1" class="cantidad-input">
+        <button >+</button>
+      </div>
     </div>
   </div>
 </div>

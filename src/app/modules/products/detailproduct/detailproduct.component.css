@@ -6,6 +6,18 @@
   padding: 20px;
 }
 
+.swiper-container{
+  width: 800px;
+  height: 1000px;
+}
+
+.slideImg{
+  width: 1500px;
+  height: 500px;
+  display: block;
+  margin: 20px auto;
+}
+
 .image-carousel {
   display: flex;
 }

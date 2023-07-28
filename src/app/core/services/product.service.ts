@@ -26,7 +26,7 @@ export class ProductService {
     return this.http
       .get<any[]>(`${this.apiUrlProduct}/?categoryId=${categoryId}`)
       .pipe(
-        map((data: any[]) => data.slice(0, 4))
+        map((data: any[]) => data.slice(0, 8))
       );
   }
 }
